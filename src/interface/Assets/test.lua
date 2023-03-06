@@ -11,4 +11,4 @@ local Main = New "Frame" {
     Size = UDim2.fromOffset(100, 100);
 }
 
-return {Main, "ScreenGui"}
+return {Main, "ScreenGui"} 
