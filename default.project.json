@@ -6,6 +6,9 @@
     "ReplicatedStorage": {
       "Common": {
         "$path": "src/shared"
+      },
+      "Modules": {
+        "$path": "Packages"
       }
     },
 
@@ -20,6 +23,12 @@
         "Client": {
           "$path": "src/client"
         }
+      }
+    },
+
+    "StarterGui": {
+      "Mounter": {
+        "$path": "src/interface"
       }
     },
 
