@@ -10,7 +10,7 @@
 - Made an example interface, "test.lua", alonside "test.story.lua" (.story for hoarcekat)
 
 # 0.0
-2. fixes
+2. [DONE] fixes
 - removed selene because I don't see the point if I already have roblox-lsp haha
 1. [DONE] Setup rojo/aftman/wally/fusion
 - first build
