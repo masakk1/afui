@@ -10,4 +10,9 @@ dependencies = []
 [[package]]
 name = "mas/afui"
 version = "0.1.0"
-dependencies = [["fusion", "elttob/fusion@0.2.0"]]
+dependencies = [["Fusion", "elttob/fusion@0.2.0"], ["Signal", "sleitnick/signal@1.4.1"]]
+
+[[package]]
+name = "sleitnick/signal"
+version = "1.4.1"
+dependencies = []
