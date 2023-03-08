@@ -6,9 +6,11 @@
 4. [TODO] Publish to wally
 3. [TODO] Port my workflow to work with wally
 2. [TODO] Undertand how wally works
-1. [TODO] Finish the Slider module (and the slidertest.lua example)
 
 ## 0.1 - CURRENT
+9. [DOIN] Finish the Slider module (and the slidertest.lua example)
+
+
 8. [DONE] Make a slider template
 - made a template to fill slider. it can be called with afui.Objects.Slider
 - every interface must have: `self.Body`, `self:Update()`, `self:Destroy()`
