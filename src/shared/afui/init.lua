@@ -8,13 +8,8 @@ local Objects = Assets.Objects
 --== Running ==--
 local afui = {}
 
-afui.Effects = {
-    RoundCorners = require(Effects.RoundCorners);
-    Padding = require(Effects.Padding)
-}
-
-afui.Objects = {
-    Slider = require(Objects.Slider);
-}
+afui.Effects = script.Assets.Effects
+afui.Objects = script.Assets.Objects
+afui.Behaviours = script.Assets.Behaviours
 
 return afui

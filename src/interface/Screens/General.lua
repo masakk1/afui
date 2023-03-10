@@ -1,6 +1,6 @@
 --== Variables
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local fusion = require(ReplicatedStorage.Modules.fusion)
+local fusion = require(ReplicatedStorage.Modules.Fusion)
 
 local New = fusion.New
 
