@@ -1,3 +1,3 @@
 return {
-    Slider = require(script.Slider)
+	Slider = require(script.Slider),
 }

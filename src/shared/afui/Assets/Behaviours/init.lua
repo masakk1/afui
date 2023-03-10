@@ -1,3 +1,1 @@
-return {
-    SliderBehaviour = require(script.SliderBehaviour)
-}
+return {}

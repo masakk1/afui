@@ -1,8 +1,8 @@
 return function(target)
-	local instance = table.unpack(require(script.Parent.test))
-	instance.Parent = target
+	local self = require(script.Parent.test)
+	self.interface.Parent = target
 
 	return function()
-		instance:Destroy()
+		self.interface:Destroy()
 	end
 end
