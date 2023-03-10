@@ -10,5 +10,6 @@ return function(props)
         Color =             props.color or Color3.new();
         LineJoinMode =      props.LineJoinMode or Enum.LineJoinMode.Round;
         Thickness =         props.thickness or 10;
+        Transparency =      props.transparency;
     }
 end

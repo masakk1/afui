@@ -1,9 +1,10 @@
 --== Variables ==--
 local ReplicatedStorage = game:GetService('ReplicatedStorage')
 local Fusion = require(ReplicatedStorage.Modules.Fusion)
-local afui_folders = ReplicatedStorage.Common.afui
+local Common = ReplicatedStorage.Common
 
-local fx = require(afui_folders.Assets.Effects)
+local palette = require(Common.ColorPalettes)
+local fx = require(Common.afui.Assets.Effects)
 
 local New = Fusion.New
 local Children = Fusion.Children
@@ -21,6 +22,7 @@ local Interface = Value()
 local STROKE_HOLDING_THICKNESS = 7
 local HANDLE_HOVERING_SIZE = UDim2.fromOffset(20, 20)
 local HANDLE_SIZE = UDim2.fromOffset(15, 15)
+local PROGRESS_BAR_HEIGHT = 10
 local SPRING_SPEED = 50
 local SPRING_DAMP = 1
 
@@ -34,7 +36,7 @@ local slided_amount = Value(.5)
 local function update_mouse_down()
     mouse_down:set( (mouse_down:get() and mouse_hovering:get()) )
 end
-local function update_slider_pos()
+local function update_slided_amount()
     if not mouse_down:get() then return end
 
     local _interface = Interface:get()
@@ -45,7 +47,7 @@ end
 
 local mouse_down_changed = Observer(mouse_down):onChange(update_mouse_down)
 local mouse_hovering_changed = Observer(mouse_hovering):onChange(update_mouse_down)
-local mouse_pos_changed = Observer(mouse_pos):onChange(update_slider_pos)
+local mouse_pos_changed = Observer(mouse_pos):onChange(update_slided_amount)
 
 local stroke_size = Computed(function()
     return if mouse_down:get() and mouse_hovering:get() then STROKE_HOLDING_THICKNESS else 0
@@ -53,60 +55,63 @@ end)
 local handle_size = Computed(function()
     return if mouse_hovering:get() then HANDLE_HOVERING_SIZE else  HANDLE_SIZE
 end)
+local progress_bar_size = Computed(function()
+    return UDim2.new( slided_amount:get(), 0, 0, PROGRESS_BAR_HEIGHT )
+end)
+local handle_pos = Computed(function()
+    return UDim2.fromScale( slided_amount:get(), 0.5 )
+end)
 
 --== Components ==--
-local function uistroke()
-    return New "UIStroke" {
-        Name = "Stroke";
-        Thickness = Spring(stroke_size, SPRING_SPEED, SPRING_DAMP);
-        Color = Color3.new(0.713725, 0.725490, 0.725490);
-    }
-end
-local function handle()
+local function handle(_)
     return New "Frame" {
         Name = "Handle";
         AnchorPoint = Vector2.new(0.5, 0.5);
         Size = Spring(handle_size, SPRING_SPEED, SPRING_DAMP);
-        Position = UDim2.fromScale(1,0.5);
+        Position = Spring(handle_pos, SPRING_SPEED, SPRING_DAMP);
 
-        BackgroundColor3 = Color3.new(0.870588, 0.890196, 0.894117);
+        BackgroundColor3 = palette.white1;
         ZIndex = 2;
 
         [Children] = {
             fx.RoundCorners{ radius = UDim.new(1, 0) };
-            uistroke();
+            fx.Stroke { 
+                thickness = Spring(stroke_size, SPRING_SPEED, SPRING_DAMP), 
+                color = palette.gray5;
+                transparency = 0.3
+            };
         };
     }
 end
-local function progress_bar()
+local function progress_bar(_)
     return New "Frame" {
         Name = "ProgressBar";
         AnchorPoint = Vector2.new(0, 0.5);
-        Size = UDim2.new(1, 0, 0, 10);
+        Size = Spring(progress_bar_size, SPRING_SPEED, SPRING_DAMP);
         Position = UDim2.fromScale(0, .5);
         ZIndex = 1;
-        BackgroundColor3 = Color3.new(0.219607, 0.407843, 0.501960);
+        BackgroundColor3 = palette.accent2;
 
         [Children] = {
             fx.RoundCorners { radius = UDim.new(1, 0) }
         }
     }
 end
-local function bar_shadow()
+local function bar_shadow(_)
     return New "Frame" {
         Name = "Shadow";
         AnchorPoint = Vector2.new(0.5, 0.5);
         Size = UDim2.new(1, 0, 0, 10);
         Position = UDim2.fromScale(.5, .5);
         ZIndex = -1;
-        BackgroundColor3 = Color3.new(0.101960, 0.117647, 0.125490);
+        BackgroundColor3 = palette.black1;
 
         [Children] = {
             fx.RoundCorners { radius = UDim.new(1, 0) }
         }
     }
 end
-local function input_area() --All input events here
+local function input_area(_) --All input events here
     return New "TextButton" {
         Name = "InputArea";
         AnchorPoint = Vector2.new(0.5, 0.5);
@@ -115,10 +120,12 @@ local function input_area() --All input events here
         ZIndex = 10;
         BackgroundTransparency = 1;
 
-        [OnEvent "MouseButton1Down"] = function()
+        [OnEvent "MouseButton1Down"] = function(x, y)
             mouse_down:set(true)
+            mouse_pos:set(Vector2.new(x, y), true)
+
         end;
-        [OnEvent "MouseButton1Up"] = function() 
+        [OnEvent "MouseButton1Up"] = function(x, y)
             mouse_down:set(false)
         end;
         [OnEvent "MouseEnter"] = function()
@@ -132,6 +139,12 @@ local function input_area() --All input events here
         end;
     }
 end
+local function output_value(_)
+    return New "NumberValue" {
+        Name = "Output";
+        Value = slided_amount
+    }
+end
 
 --== Running ==--
 Interface:set( New "Frame" { --Main
@@ -140,15 +153,17 @@ Interface:set( New "Frame" { --Main
     Size = UDim2.fromOffset(400, 50);
 
     BackgroundTransparency = 0;
-    BackgroundColor3 = Color3.new(0.176470, 0.203921, 0.239215);
+    BackgroundColor3 = palette.black2;
 
     [Children] = {
-        handle();
-        progress_bar();
-        bar_shadow();
-        input_area();
+        handle {};
+        progress_bar {};
+        bar_shadow {};
+        input_area {};
 
-        fx.RoundCorners{ radius = UDim.new(0, 10) };
+        output_value {};
+
+        fx.RoundCorners { radius = UDim.new(0, 10) };
         fx.Padding { left = UDim.new(0, 20), right = UDim.new(0, 20) };
     };
     [Cleanup] = {mouse_down_changed, mouse_hovering_changed, mouse_pos_changed}

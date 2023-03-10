@@ -11,9 +11,11 @@
 2. [TODO] Undertand how wally works
 
 ## 0.2 - WORKING
-6. [TODO] Add the palette module. I NEED IT!
+6. [DONE] Add the palette module. I NEED IT!
+- added it at "Common"
+- added the nord palette. Specially the white, black and accent. Not colors
 
-5. [DOIN] port, for the last time, Slider.lua
+5. [DONE] port, for the last time, Slider.lua
 - Removed SliderBehaviour.lua
 - Implemented the logic inside Slider.lua
 
