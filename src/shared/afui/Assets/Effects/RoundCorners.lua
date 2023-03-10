@@ -4,8 +4,8 @@ local Fusion = require(Modules.Fusion)
 
 local New = Fusion.New
 
-return function(radius:UDim)
+return function(props)
     return New "UICorner" {
-        CornerRadius = radius or UDim.new(1, 0)
+        CornerRadius = props.radius or UDim.new(0, 7)
     }
 end
