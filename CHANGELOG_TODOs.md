@@ -1,16 +1,16 @@
 # tasks
 - please write a better InputControl util module. Add mobile compatibility!
 
-## 0.4
+## 0.4 - WORKING
 2. [TODO] Create a  
 1. [TODO] Create a dialogue inferface
 
-## 0.3
-4. [TODO] Publish to wally
-3. [TODO] Port my workflow to work with wally
-2. [TODO] Undertand how wally works
+## 0.3 - WORKING
+3. [TODO] Publish to wally
+2. [TODO] Port my workflow to work with wally
+1. [DOIN] Undertand how wally works
 
-## 0.2 - WORKING
+## 0.2 - CURRENT
 6. [DONE] Add the palette module. I NEED IT!
 - added it at "Common"
 - added the nord palette. Specially the white, black and accent. Not colors
@@ -43,7 +43,7 @@
 - the new objects use these behaviours. 
 - For making custom objects it is recommended to use the behaviour instead of changing the Object file (because it's gonna be overwritten by package managers)
 
-## 0.1 - CURRENT
+## 0.1
 9. [DONE] Finish the Slider module (and the slidertest.lua example)
 - however this is the behaviour, not an actual object.
 - this is gonna be changed in the next version.
