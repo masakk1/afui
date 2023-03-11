@@ -1,3 +1,4 @@
+-- stylua: ignore start
 type c3 = Color3
 
 -- TEMPLATE:

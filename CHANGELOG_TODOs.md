@@ -1,16 +1,24 @@
 # tasks
 - please write a better InputControl util module. Add mobile compatibility!
 
-## 0.4
-2. [TODO] Create a  
+## 0.4 - WORKING
+2. [TODO] Create a ...
 1. [TODO] Create a dialogue inferface
 
-## 0.3
-4. [TODO] Publish to wally
-3. [TODO] Port my workflow to work with wally
-2. [TODO] Undertand how wally works
+## 0.3 - CURRENT
+4. [DONE] Make a better README.md file
+- just adds a basic installation and usage page. 
+5. [DONE] Publish to wally
+6. [DONE] Port my workflow to work with wally
+7. [DONE] Undertand how wally works
+- it uses your default.project.json and .gitignore to publish
 
-## 0.2 - WORKING
+
+### 0.2.1
+1. [DONE] Applied stylua over all the code. Stylized all the way!
+2. [DONE] Remove slider Behaviour
+
+## 0.2
 6. [DONE] Add the palette module. I NEED IT!
 - added it at "Common"
 - added the nord palette. Specially the white, black and accent. Not colors
@@ -23,7 +31,6 @@
 - I decided having a "behaviour" is just stupid. The whole point was compatibility.
 - However I found myself using Fusion as how it should be, and realised that is way better.
 - Behaviours won't disappear for now, because I think they could be great for certain interfaces, but sliderbehaviour is GONE.
-
 3. [DONE] Adding input controls for the slider
 - Created `InputArea` inside Slider and then detect the inpur from there.
 - I tried implementing a InputControler utility, but it's too complicated for a something that won't always be noticed. Maybe in the future but not now. (issue is that mouseup doesnt detect mouseup if its gone)
@@ -43,7 +50,7 @@
 - the new objects use these behaviours. 
 - For making custom objects it is recommended to use the behaviour instead of changing the Object file (because it's gonna be overwritten by package managers)
 
-## 0.1 - CURRENT
+## 0.1
 9. [DONE] Finish the Slider module (and the slidertest.lua example)
 - however this is the behaviour, not an actual object.
 - this is gonna be changed in the next version.

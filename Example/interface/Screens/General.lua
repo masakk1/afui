@@ -4,9 +4,9 @@ local fusion = require(ReplicatedStorage.Modules.Fusion)
 
 local New = fusion.New
 
-local screen = New "ScreenGui" {
-    Name = "ScreenGui";
-    IgnoreGuiInset = true;
+local screen = New("ScreenGui") {
+	Name = "ScreenGui",
+	IgnoreGuiInset = true,
 }
 
 return screen
