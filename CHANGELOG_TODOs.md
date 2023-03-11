@@ -6,7 +6,10 @@
 2. [TODO] Port popups
 1. [TODO] Create a dialogue inferface
 
-### 0.3.1 - CURRENT (dev)
+### 0.3.2 CURRENT
+1. [DONE] Fixed every requiring mistake made by updating
+
+### 0.3.1
 1. [DONE] fixed Slider to work with standards
    - now it can be called as `Slider {props}
 
@@ -15,7 +18,7 @@
    - now each "note" under a log (like this line). Will have an indentation to help visualization
    - added a # 0.x header to indicate all these versions belong inside this version
 
-## 0.3 - CURRENT (main)
+## 0.3
 1. [DONE] Undertand how wally works
    - it uses your default.project.json and .gitignore to publish
 2. [DONE] Publish to wally

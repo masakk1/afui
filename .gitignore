@@ -2,6 +2,7 @@
 /afuiplace.rbxlx
 /sourcemap.json
 /Packages/
+/src/Fusion.lua
 
 # Roblox Studio lock files
 /*.rbxlx.lock
