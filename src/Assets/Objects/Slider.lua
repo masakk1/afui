@@ -7,6 +7,7 @@ local afui_files = Modules.afui
 local palette = require(afui_files.ColorPalettes)
 local fx = require(afui_files.Assets.Effects)
 
+-- fusion
 local New = Fusion.New
 local Children = Fusion.Children
 local Value = Fusion.Value
@@ -147,27 +148,29 @@ local function output_value(_)
 end
 
 --== Running ==--
-Interface:set(New("Frame") { --Main
-	AnchorPoint = Vector2.one * 0.5,
-	Position = UDim2.fromScale(0.5, 0.5),
-	Size = UDim2.fromOffset(400, 50),
+local function Make(_)
+	Interface:set(New("Frame") { --Main
+		AnchorPoint = Vector2.one * 0.5,
+		Position = UDim2.fromScale(0.5, 0.5),
+		Size = UDim2.fromOffset(400, 50),
 
-	BackgroundTransparency = 0,
-	BackgroundColor3 = palette.black2,
+		BackgroundTransparency = 0,
+		BackgroundColor3 = palette.black2,
 
-	[Children] = {
-		handle {},
-		progress_bar {},
-		bar_shadow {},
-		input_area {},
+		[Children] = {
+			handle {},
+			progress_bar {},
+			bar_shadow {},
+			input_area {},
 
-		output_value {},
+			output_value {},
 
-		fx.RoundCorners { radius = UDim.new(0, 10) },
-		fx.Padding { left = UDim.new(0, 20), right = UDim.new(0, 20) },
-	},
-	[Cleanup] = { mouse_down_changed, mouse_hovering_changed, mouse_pos_changed },
-})
+			--fx.RoundCorners { radius = UDim.new(0, 10) },
+			fx.Padding { left = UDim.new(0, 20), right = UDim.new(0, 20) },
+		},
+		[Cleanup] = { mouse_down_changed, mouse_hovering_changed, mouse_pos_changed },
+	})
+	return Interface:get()
+end
 
---== Behaviour ==--
-return Interface:get()
+return Make
