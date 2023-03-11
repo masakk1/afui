@@ -1,20 +1,24 @@
 # tasks
 - please write a better InputControl util module. Add mobile compatibility!
 
-## 0.4
+## 0.4 - WORKING
 2. [TODO] Create a ...
 1. [TODO] Create a dialogue inferface
 
-## 0.3 - WORKING
-3. [TODO] Publish to wally
-2. [TODO] Port my workflow to work with wally
-1. [DOIN] Undertand how wally works
+## 0.3 - CURRENT
+4. [DONE] Make a better README.md file
+- just adds a basic installation and usage page. 
+5. [DONE] Publish to wally
+6. [DONE] Port my workflow to work with wally
+7. [DONE] Undertand how wally works
+- it uses your default.project.json and .gitignore to publish
 
-### 0.2.1 - CURRENT (DEV)
+
+### 0.2.1
 1. [DONE] Applied stylua over all the code. Stylized all the way!
 2. [DONE] Remove slider Behaviour
 
-## 0.2 - CURRENT (MAIN)
+## 0.2
 6. [DONE] Add the palette module. I NEED IT!
 - added it at "Common"
 - added the nord palette. Specially the white, black and accent. Not colors
