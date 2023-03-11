@@ -1,8 +1,6 @@
 --== Variables ==--
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Modules = ReplicatedStorage.Modules
-local Fusion = require(Modules.Fusion)
-local afui_files = Modules.afui
+local afui_files = script.Parent.Parent.Parent
+local Fusion = require(afui_files.Fusion)
 
 local palette = require(afui_files.ColorPalettes)
 local fx = require(afui_files.Assets.Effects)

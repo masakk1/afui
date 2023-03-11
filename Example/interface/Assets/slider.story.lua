@@ -1,5 +1,5 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local afui = require(ReplicatedStorage.Common.afui)
+local afui = require(ReplicatedStorage.Modules.afui)
 
 return function(target)
 	--local loop = true

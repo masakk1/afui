@@ -1,6 +1,6 @@
 [package]
 name = "masakk1/afui"
-version = "0.3.0"
+version = "0.3.2"
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
