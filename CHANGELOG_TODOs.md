@@ -27,7 +27,6 @@
 - I decided having a "behaviour" is just stupid. The whole point was compatibility.
 - However I found myself using Fusion as how it should be, and realised that is way better.
 - Behaviours won't disappear for now, because I think they could be great for certain interfaces, but sliderbehaviour is GONE.
-
 3. [DONE] Adding input controls for the slider
 - Created `InputArea` inside Slider and then detect the inpur from there.
 - I tried implementing a InputControler utility, but it's too complicated for a something that won't always be noticed. Maybe in the future but not now. (issue is that mouseup doesnt detect mouseup if its gone)
