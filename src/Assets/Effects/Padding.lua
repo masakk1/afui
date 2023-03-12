@@ -1,6 +1,5 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Modules = ReplicatedStorage.Modules
-local Fusion = require(Modules.Fusion)
+local Packages = script.Parent.Parent.Parent.Parent
+local Fusion = require(Packages.Fusion)
 
 local New = Fusion.New
 
