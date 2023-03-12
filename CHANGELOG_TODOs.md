@@ -3,10 +3,13 @@
 # 0.x
 
 ## 0.4 - WORKING
-2. [TODO] Port popups
-1. [TODO] Create a dialogue inferface
+1. [TODO] Port popups
+2. [TODO] Create a dialogue inferface
 
-### 0.3.2 CURRENT
+### 0.3.3 CURRENT
+1. [DONE] Fixed HOPEFULLY every requiring mistake made by updating
+
+### 0.3.2
 1. [DONE] Fixed every requiring mistake made by updating
 
 ### 0.3.1
